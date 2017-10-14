@@ -54,8 +54,20 @@ public class TestDeque {
                 System.out.println("Remove First : "+deque.removeFirst()+" ");
             }
         }
-
         System.out.println();
+    }
+
+    private static void testEmptyQueue() {
+        Deque<Integer> deque = new Deque<>();
+        // add first remove last
+        deque.addFirst(1);
+        deque.removeLast();
+        assert(deque.isEmpty());
+        // add last remove first
+        deque.addLast(10);
+        deque.removeFirst();
+        assert(deque.isEmpty());
+        System.out.println("Test Empty Dequeue Passed");
     }
 
 
@@ -63,5 +75,6 @@ public class TestDeque {
         testAddRemoveFirst();
         testAddFirstRemoveLast();
         testAddRemoveRandom();
+        testEmptyQueue();
     }
 }
