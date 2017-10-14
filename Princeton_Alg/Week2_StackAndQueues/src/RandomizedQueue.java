@@ -66,8 +66,6 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
     }                // remove and return the item from the front
 
     private Item removeItemAtIndex(int index) {
-        System.out.println("Remove item at "+index);
-        System.out.println("Size "+size);
         Node<Item> iter = head;
         // special case of len 1
         if (size == 1){
