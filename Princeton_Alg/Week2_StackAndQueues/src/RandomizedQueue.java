@@ -20,7 +20,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
 
     public int size() { return size; } // return the number of items on the deque
 
-    public void enQueue(Item item) {
+    public void enqueue(Item item) {
 
         // make sure item is not null
         if (item == null){ throw new IllegalArgumentException("Item cannot be nukk"); }
@@ -154,13 +154,13 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         @Override
         public boolean hasNext() {
             if (traverseOder.length == 0) { return false; }
-            if (currIdx == traverseOder.length - 1) { return  false; }
+            if (currIdx == traverseOder.length) { return  false; }
             return true;
         }
 
         @Override
         public Item next() {
-            if (currIdx >= traverseOder.length) { throw new IllegalStateException("Iterator is in wrong state"); }
+            if (currIdx >= traverseOder.length) { throw new NoSuchElementException("Iterator is in wrong state"); }
             return getDataAtIndex(traverseOder[currIdx++]);
         }
 

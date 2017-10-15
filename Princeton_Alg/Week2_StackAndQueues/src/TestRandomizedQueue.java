@@ -1,5 +1,3 @@
-import com.sun.tools.doclets.formats.html.SourceToHTMLConverter;
-
 import java.util.Random;
 
 public class TestRandomizedQueue {
@@ -9,7 +7,7 @@ public class TestRandomizedQueue {
     private static void testEnqueDequeuSeq(){
         RandomizedQueue<Integer> queue = new RandomizedQueue<>();
         for (int i = 0; i < 10; i++) {
-            queue.enQueue(i);
+            queue.enqueue(i);
             System.out.println("Enqueue: "+i);
         }
         for (int i = 0; i < 10 ; i++) {
@@ -28,14 +26,14 @@ public class TestRandomizedQueue {
                 int item = queue.dequeue();
                 System.out.println("Item: "+item);
             } else{
-                queue.enQueue(i);
+                queue.enqueue(i);
             }
 
             // randomly enqueue
             if (queue.isEmpty()){
                 int randEnque = ranGen.nextInt(20);
                 for (int j = 0; j < randEnque ; j++) {
-                    queue.enQueue(j);
+                    queue.enqueue(j);
                 }
             }
 
@@ -49,7 +47,7 @@ public class TestRandomizedQueue {
     private  static void testIterator() {
         RandomizedQueue<Integer> queue = new RandomizedQueue<>();
         for (int i = 0; i < 20 ; i++) {
-            queue.enQueue(i);
+            queue.enqueue(i);
         }
         for(Integer i : queue) {
             System.out.println("first loop: "+i);

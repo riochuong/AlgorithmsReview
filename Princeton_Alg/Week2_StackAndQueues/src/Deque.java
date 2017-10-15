@@ -132,11 +132,12 @@ public class Deque<Item> implements Iterable<Item> {
 
         @Override
         public boolean hasNext() {
-            return (current != null) && (current.next != null);
+            return (current != null);
         }
 
         @Override
         public Item next() {
+            if (current == null) { throw new NoSuchElementException("no more element in the deque"); }
             Item item = current.data;
             current = current.next;
             return item;
