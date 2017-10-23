@@ -14,6 +14,19 @@ public class TestPoint {
         System.out.println("Test Point Comparator passed !!");
     }
 
+    private static void testHorizontalLine() {
+        Point p0 = new Point(19000,10000);
+        Point p1 = new Point(18000,10000);
+        Point p2 = new Point(19000,10000);
+        Point p3 = new Point(32000,10000);
+        Point p4 = new Point(1234, 5678);
+        double slope_0_1 = p0.slopeTo(p1);
+        double slope_0_4 = p0.slopeTo(p4);
+        assert (slope_0_1 != slope_0_4);
+        System.out.println(slope_0_1+" "+slope_0_4);
+        System.out.println("Test Points in same Horizontal Line passed !!!");
+    }
+
 
     private static void testPointSanity() {
         Point p0 = new Point(1,1);
@@ -37,5 +50,6 @@ public class TestPoint {
     public static void main(String[] args) {
         testPointSanity();
         testPointComparator();
+        testHorizontalLine();
     }
 }

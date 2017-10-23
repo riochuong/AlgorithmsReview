@@ -67,7 +67,7 @@ public class Point implements Comparable<Point> {
         // horizontal line
         if (this.y == that.y) return 0.0;
         // slope
-        return (this.y - that.y) / (this.x - that.x);
+        return ((double)(that.y - this.y)) / (that.x - this.x);
     }
 
     /**
@@ -86,8 +86,8 @@ public class Point implements Comparable<Point> {
         if (this.y > that.y) return 1;
         if (this.y < that.y ) return -1;
         // reaching here means y are equals
-        if (this.x < that.x) return 1;
-        if (this.x > that.x) return -1;
+        if (this.x > that.x) return 1;
+        if (this.x < that.x) return -1;
         // they must be equal now
         return 0;
     }

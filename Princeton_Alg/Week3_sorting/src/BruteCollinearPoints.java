@@ -36,9 +36,9 @@ public class BruteCollinearPoints {
                             Point q = this.points[j];
                             Point r = this.points[k];
                             Point s = this.points[l];
-                            System.out.println(i+" "+j+" "+k+" "+l);
                             // check if they are collinear
                             if (isColinear(p,q,r,s)) {
+                                System.out.println(i+" "+j+" "+k+" "+l);
                                 segmentStore[segmentCount++] = findSegment(p,q,r,s);
                             }
                         }
@@ -58,7 +58,13 @@ public class BruteCollinearPoints {
         double slope_p_q = p.slopeTo(q);
         double slope_p_r = p.slopeTo(r);
         double slope_p_s = p.slopeTo(s);
-        return (slope_p_q == slope_p_r) &&(slope_p_q == slope_p_s);
+        boolean res =  (slope_p_q == slope_p_r) && (slope_p_q == slope_p_s);
+        if (res){
+            System.out.println("Slopes "+slope_p_q+" "+slope_p_r+" "+slope_p_s);
+            System.out.println("p: "+p+" q: "+q+" r: "+r+" s:"+s);
+            return true;
+        }
+        return false;
     }
 
     /**
